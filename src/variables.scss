@@ -1,0 +1,4 @@
+@import '~@angular/material/theming';
+
+$primary-palette: mat-palette($mat-indigo);
+$primary: mat-color($primary-palette);

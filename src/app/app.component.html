@@ -1,0 +1,35 @@
+<main class="main-page">
+  <section class="header mat-display-2">
+    Alexander Ertel
+  </section>
+
+  <section class="links">
+    <button mat-button class="info-link" (click)="setActiveContent('about')"> About </button>
+    <button mat-button class="info-link" (click)="setActiveContent('github')"> Github </button>
+    <button mat-button class="info-link" (click)="setActiveContent('resume')"> Resume </button>
+    <button mat-button class="info-link" (click)="setActiveContent('contact')"> Contact </button>
+  </section>
+
+  <section class="content">
+    <mat-card *ngIf="activeContent === 'about'" [@contentSlide] class="about content-card">
+      <div>I'm a full-stack developer with experience designing databases, APIs, user interfaces, and everything in-between</div>
+      <div>Check out the other links for more information or to chat</div>
+    </mat-card>
+
+    <mat-card *ngIf="activeContent === 'github'" [@contentSlide] class="github content-card">
+      <div>Check out some of my hobby work</div>
+      <div class="divider-line">- or - </div>
+      <div>The source for this very website</div>
+      <a mat-raised-button href="https://github.com/atertel" target="_blank"> GitHub </a>
+    </mat-card>
+
+    <mat-card *ngIf="activeContent === 'resume'" [@contentSlide] class="resume content-card">
+      <iframe src="https://drive.google.com/file/d/1O2Rcvk4QxHa97jp8jbel4CHhSQ0l_L2W/preview" width="100%" height="100%" frameborder="0"></iframe>
+    </mat-card>
+
+    <mat-card *ngIf="activeContent === 'contact'" [@contentSlide] class="contact content-card">
+      <div>The easiest way to get in touch is via email</div>
+      <a href="mailto:alexanderertel@gmail.com" class="email-link">alexanderertel@gmail.com</a>
+    </mat-card>
+  </section>
+</main>
